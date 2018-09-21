@@ -58,7 +58,7 @@ app.use(
   ------------------------------
 */
 // app.get('/my-endpoint', require('./api/my-endpoint'))
-
+// app.post('/register_user', require('./api/register_user'));
 
 /*
   Catch-all endpoint which delivers `index.html` and let's

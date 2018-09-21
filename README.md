@@ -2,6 +2,10 @@ DB layout:
 Collection users:
 uid, un, pw hash, current session token, is_enabled
 
+Collection admonistrashun:
+store admin user id's
+uid
+
 Features log:
 V-0.0.1
 - Multiple pages
