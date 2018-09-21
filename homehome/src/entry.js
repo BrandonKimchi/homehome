@@ -4,7 +4,7 @@
 import '@babel/polyfill'
 
 // Import our top-level sass file.
-import './styles/styles.scss'
+// import './styles/styles.scss'
 
 // Import React.
 import React from 'react'
@@ -12,13 +12,14 @@ import ReactDOM from 'react-dom'
 
 // Import our top-level component.
 import App from 'components/App'
+import Page from 'components/Page'
 
 // Create a single element for our app to live.
 document.body.innerHTML = '<div id="app"></div>'
-document.body.className = 'bg-black-80 fw4 white-80'
+// document.body.className = 'bg-black-80 fw4 white-80'
 
 // Mount our app.
 ReactDOM.render(
-  <App />,
+  <Page />,
   document.querySelector('#app')
 )
