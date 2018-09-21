@@ -20,7 +20,7 @@ const { mongoURI, appName } = process.env
   Users are still free to pass in their own custom name.
   To set the db name globally, replace `appName` below with a string.
 */
-const mongo = (databaseName = 'homehome') => (
+const mongo = (databaseName = appName) => (
   MongoClient.connect(mongoURI, { useNewUrlParser: true })
     .then(client => [null, client, client.db(databaseName)])
     .catch(err => [err])
