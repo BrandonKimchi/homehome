@@ -4,6 +4,7 @@ uid, un, pw hash, current session token, is_enabled
 
 Features log:
 V-0.0.1
+- Multiple pages
 - Skeleton landing page
 
 Feature wishlist:

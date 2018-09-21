@@ -13,6 +13,7 @@ import ReactDOM from 'react-dom'
 // Import our components.
 import Home from 'components/Home'
 import Page from 'components/Page'
+import AdminPage from 'components/AdminPage'
 import NotFound from 'components/NotFound'
 
 // Import React Router things.
@@ -27,6 +28,7 @@ ReactDOM.render(
   <Router>
     <Switch>
       <Route exact path='/' component={Page} />
+      <Route path='/admin' component={AdminPage} />
       <Route component={NotFound} />
     </Switch>
   </Router>,
