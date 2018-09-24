@@ -19,16 +19,21 @@ const bp = require('body-parser') // Makes `req.body` available - https://goo.gl
 const session = require('express-session') // Save data across requests - https://goo.gl/GEFgyQ
 const app = express()
 
-// MongoDB
-const { sessionStoreErr } = require('./api/utilities/handleErrors')
-const MongoStore  = require('connect-mongodb-session')(require('express-session'))
-const store = new MongoStore({
-  uri: mongoURI,
-  collection: mongoSession
-})
+// // MongoDB
+// const { sessionStoreErr } = require('./api/utilities/handleErrors')
+// const MongoStore  = require('connect-mongodb-session')(require('express-session'))
+// const store = new MongoStore({
+//   uri: mongoURI,
+//   collection: mongoSession
+// })
+//
+// // Catch & record store errors in the database.
+// store.on('error', sessionStoreErr)
 
-// Catch & record store errors in the database.
-store.on('error', sessionStoreErr)
+// Check SQL DB setup
+const mysql = require('mysql');
+
+
 
 /*
   Express middleware.
@@ -41,7 +46,7 @@ app.use(
   bp.json(), // http://goo.gl/ixEWAa, https://goo.gl/Xp2pBC, https://goo.gl/g9V9AM
   bp.urlencoded({ extended: false }), // http://goo.gl/ixEWAa, https://goo.gl/jkPwBu
   session({
-    store,
+    // store,
     name: appName, // Needed if multiple apps running on same host.
     resave: false, // Forces cookie to be resaved back to the session store even if no changes.
     saveUninitialized: true, // Forces a session that is uninitialized to be saved to the store.
@@ -58,7 +63,7 @@ app.use(
   ------------------------------
 */
 // app.get('/my-endpoint', require('./api/my-endpoint'))
-// app.post('/register_user', require('./api/register_user'));
+app.post('/register_user', require('./api/createUser'));
 
 /*
   Catch-all endpoint which delivers `index.html` and let's

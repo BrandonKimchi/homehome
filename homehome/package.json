@@ -12,13 +12,14 @@
   ],
   "main": "server.js",
   "dependencies": {
-    "body-parser": "^1",
+    "body-parser": "^1.18.3",
     "compression": "^1",
     "connect-mongodb-session": "^2",
     "express": "^4",
     "express-session": "^1",
     "helmet": "^3",
     "mongodb": "^3",
+    "mysql": "^2.16.0",
     "nodemon": "latest"
   },
   "devDependencies": {
